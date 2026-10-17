@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lottery-system"
+version = "0.1.0"
+description = "Nonofficial feasibility and allocation core for the PTA booth lottery"
+requires-python = ">=3.12"
+dependencies = ["ortools>=9.12,<10"]
+
+[project.scripts]
+lottery = "lottery.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "hypothesis>=6,<7"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lottery"]
