@@ -28,7 +28,40 @@ def main():
     )
     with tempfile.TemporaryDirectory(prefix="lottery-packaged-") as directory:
         output = Path(directory) / "result"
-        subprocess.run(
+
+        def invoke(arguments, timeout):
+            try:
+                result = subprocess.run(
+                    arguments,
+                    cwd=directory,
+                    env=environment,
+                    capture_output=True,
+                    text=True,
+                    timeout=timeout,
+                )
+                if result.returncode:
+                    raise RuntimeError(
+                        f"Executable exited {result.returncode}: {result.stdout} {result.stderr}"
+                    )
+            except (RuntimeError, subprocess.TimeoutExpired) as error:
+                details = str(error)
+                for name in ("smoke-stage.txt", "smoke-error.txt"):
+                    path = output / name
+                    if path.exists():
+                        details += "\n" + path.read_text(encoding="utf-8")
+                annotation = (
+                    details.replace("%", "%25")
+                    .replace("\r", "%0D")
+                    .replace("\n", "%0A")
+                )
+                if os.environ.get("GITHUB_ACTIONS") == "true":
+                    print(
+                        f"::error title=Frozen executable smoke::{annotation}",
+                        flush=True,
+                    )
+                raise RuntimeError(details) from error
+
+        invoke(
             [
                 str(executable),
                 "--require-frozen",
@@ -37,9 +70,6 @@ def main():
                 "--output",
                 str(output),
             ],
-            cwd=directory,
-            env=environment,
-            check=True,
             timeout=180,
         )
         proof = (output / "smoke-passed.txt").read_text(encoding="utf-8")
@@ -47,11 +77,14 @@ def main():
             raise RuntimeError("Packaged smoke did not prove a frozen 22-class draw")
         print(proof)
         if args.gui:
-            subprocess.run(
-                [str(executable), "--require-frozen", "--gui-smoke"],
-                cwd=directory,
-                env=environment,
-                check=True,
+            invoke(
+                [
+                    str(executable),
+                    "--require-frozen",
+                    "--gui-smoke",
+                    "--output",
+                    str(output),
+                ],
                 timeout=60,
             )
 

@@ -3,26 +3,35 @@
 import argparse
 from pathlib import Path
 import sys
+import traceback
 
 
 def self_test(snapshot_path, destination):
+    root = Path(destination)
+    root.mkdir(parents=True, exist_ok=True)
+
+    def stage(value):
+        (root / "smoke-stage.txt").write_text(value, encoding="utf-8")
+
+    stage("Importing bundled solver and persistence modules")
     from lottery.desktop import DesktopSession
     from lottery.exports import verify_export
     from lottery.runs import RunStore
 
-    root = Path(destination)
-    root.mkdir(parents=True, exist_ok=True)
     database = root / "runs.sqlite3"
     session = DesktopSession(RunStore(database), workspace=root / "workspace")
     snapshot = session.import_snapshot(snapshot_path)
+    stage("Checking bundled solver feasibility")
     if not session.check_feasibility().feasible:
         raise RuntimeError("Sample must be feasible")
     session.set_method("automatic")
     for admin in snapshot.config.approval_ids[:2]:
         session.approve(admin)
+    stage("Committing bundled official draw")
     run = session.commit("packaged-smoke")
     # Construct a new store and desktop session to prove restart cannot reroll.
     restarted = DesktopSession(RunStore(database), workspace=root / "restart")
+    stage("Checking restart and repeated exports")
     recovered = restarted.open_run(run.run_id)
     if recovered != run:
         raise RuntimeError("Restart changed committed result")
@@ -60,6 +69,7 @@ def self_test(snapshot_path, destination):
         f"frozen={bool(getattr(sys, 'frozen', False))}\nclasses={len(assignments)}\noutput_hash={run.output_hash}\n",
         encoding="utf-8",
     )
+    stage("Frozen draw, restart, and exports passed")
 
 
 def main():
@@ -74,18 +84,32 @@ def main():
     args = parser.parse_args()
     if args.require_frozen and not getattr(sys, "frozen", False):
         parser.error("This check requires the bundled executable")
-    if args.self_test:
-        if args.output is None:
-            parser.error("--self-test requires --output")
-        self_test(args.self_test.resolve(), args.output.resolve())
-    elif args.gui_smoke:
-        from lottery.gui import smoke_test
+    try:
+        if args.self_test:
+            if args.output is None:
+                parser.error("--self-test requires --output")
+            self_test(args.self_test.resolve(), args.output.resolve())
+        elif args.gui_smoke:
+            if args.output:
+                args.output.mkdir(parents=True, exist_ok=True)
+                (args.output / "smoke-stage.txt").write_text(
+                    "Opening bundled Tk screens", encoding="utf-8"
+                )
+            from lottery.gui import smoke_test
 
-        smoke_test()
-    else:
-        from lottery.gui import main as gui_main
+            smoke_test()
+        else:
+            from lottery.gui import main as gui_main
 
-        gui_main(["--database", str(args.database)] if args.database else [])
+            gui_main(["--database", str(args.database)] if args.database else [])
+    except Exception:
+        if args.output and (args.self_test or args.gui_smoke):
+            args.output.mkdir(parents=True, exist_ok=True)
+            (args.output / "smoke-error.txt").write_text(
+                traceback.format_exc(), encoding="utf-8"
+            )
+            raise SystemExit(1)
+        raise
 
 
 if __name__ == "__main__":
