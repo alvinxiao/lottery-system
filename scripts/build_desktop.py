@@ -37,6 +37,8 @@ def main():
         check=True,
     )
     application = output / "PTACarnivalLottery"
+    shutil.copytree(root / "sample-data", application / "sample-data", dirs_exist_ok=True)
+    shutil.copy2(root / "docs" / "desktop-guide.md", application / "DESKTOP-GUIDE.md")
     archive = output / f"PTACarnivalLottery-{platform.system()}-{platform.machine()}"
     zip_path = Path(
         shutil.make_archive(

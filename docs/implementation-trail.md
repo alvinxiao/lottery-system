@@ -16,5 +16,6 @@ The scope expanded from the reviewed solver core to all remaining specification 
 | Infeasible input must remain correctable before freeze | Deterministic category-capacity maxflow before Google signoff, independent of desktop optimization | Fourteen-food-only draft case |
 | Published documents must survive failed PDF requests without duplicate versions | Persist prepared artifact IDs, retry the same version, and share sanitized files read-only | Adapter PDF-failure/retry tests |
 | Sample data must remain useful for manual tests | Deterministic carnival/Chinese-food generator, separate feasible/infeasible cases, mock intake, and walkthrough | Sample regeneration and full cross-language rehearsal |
+| Windows checkout converted canonical inputs to CRLF | Pin repository text to LF and retain test failures as CI annotations | Reproduced with `git -c core.autocrlf=true checkout-index`; corrected checkout loads successfully |
 
 Independent reviewers tested the durable desktop boundaries and Google service boundaries. Their findings were fixed with regression tests. Cursor-only control tools and prescribed pstack model families were unavailable, so the implementation used the available Codex agents, actual Tk widgets and CLI subprocesses, native executable tests, and Google service fakes. Production Google services were not contacted.
