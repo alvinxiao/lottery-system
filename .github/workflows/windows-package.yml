@@ -10,8 +10,11 @@ jobs:
       - uses: astral-sh/setup-uv@v6
         with:
           version: '0.9.5'
-      - run: uv python install 3.12
-      - run: uv sync --frozen --python 3.12
+      - uses: actions/setup-python@v6
+        id: python
+        with:
+          python-version: '3.12'
+      - run: uv sync --frozen --python "${{ steps.python.outputs.python-path }}"
       - name: Test native desktop widgets
         run: uv run --frozen python -c "from lottery.gui import smoke_test; smoke_test()"
       - name: Build native Windows executable

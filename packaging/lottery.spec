@@ -1,10 +1,14 @@
 # Build on the target OS. Never cross-compile Windows executables on Linux.
 from pathlib import Path
 import sys
-from PyInstaller.utils.hooks import collect_all, copy_metadata
+from PyInstaller.utils.hooks import collect_all, copy_metadata, collect_delvewheel_libs_directory
 
 root = Path(SPECPATH).parent
 ortools_data, ortools_binaries, ortools_hidden = collect_all('ortools')
+# PyInstaller's NumPy hook only collects sibling DLLs for INSTALLER=pip, not uv.
+for dependency in ('numpy', 'pandas'):
+    ortools_data, ortools_binaries = collect_delvewheel_libs_directory(
+        dependency, datas=ortools_data, binaries=ortools_binaries)
 # Managed Linux Python builds can keep Tcl/Tk outside the dynamic linker search path.
 tk_binaries = [(str(path), '.') for pattern in ('libtcl*.so', 'libtk*.so')
                for path in (Path(sys.base_prefix) / 'lib').glob(pattern)]
