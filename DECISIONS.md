@@ -1,26 +1,33 @@
-# Decisions
+# Policy and implementation decisions
 
-The authoritative requirements remain [docs/spec.md](docs/spec.md). This implementation stops after Milestone 1 for review.
+[docs/spec.md](docs/spec.md) remains the product contract. The request to implement the whole specification supersedes its original Milestone 1 pause. All implementation milestones are now in scope.
 
-## Locked rules implemented
+## Allocation rules
 
-- Full participation is a hard constraint. Infeasibility blocks optimization output.
-- Each class has exactly three approved ranked distinct booth IDs. Booth identity and category remain consistent.
-- Exact game and food quotas and globally unique assigned booth IDs are mandatory.
-- Objective locks preserve unique-first, first-choice, then second-choice counts before class-priority tie-breaking.
-- Unique-first considers every other class's proposals at every rank.
-- Feasibility uses no randomized class priority. All classes remain eligible for private correction outreach.
-- Manual priority needs every class exactly once. Automatic priority has a reproducible versioned seed algorithm.
-- Frozen-input metadata records at least two distinct approval IDs. Recorded IDs do not authenticate people.
+A full draw requires one approved proposal per class, unique assigned booth IDs, and exact game and food targets. Every class needs ranks 1, 2, and 3 with distinct approved canonical booths. Unique-first eligibility considers every other class at every rank. Sequential CP-SAT solves lock unique-first, first-choice, then second-choice optima before class-priority tie-breaking. Each optimization stage must prove optimality.
 
-## Implementation choices
+Feasibility creates no random priority and reveals no assignment. Infeasibility blocks official intent creation. Correction diagnostics conservatively include every potentially helpful class without blame or disclosure of private proposals.
 
-Version 1 accepts canonical snapshot directories, not ZIP files. Categories are lowercase `game` and `food`. SHA-256 of canonical config bytes identifies a snapshot and binds the CSV manifest. Neither checksum nor approval metadata establishes trusted provenance. The operator must obtain the snapshot through an authorized process.
+## Official runs
 
-Pure frozen domain objects, boundary validation, and an independent result checker separate input handling from solving. Sequential CP-SAT solves prove each exact objective before locking it. A supplied priority uniquely orders rank choices after those locks. Priority generation is a library utility and is not an official draw. The CLI exposes only nonofficial validation and feasibility.
+SQLite owns durable run intent and immutable committed results. The intent records the frozen snapshot, method, seed or manual order, and runtime versions before solving. Recovery reuses that plan. One original event slot prevents accidental rerolls even when a new run ID is supplied. Committed records remain readable after software updates, while unfinished recovery fails closed if its required runtime changes.
 
-## Unresolved policy and deferred controls
+Results appear only after commit. Repeated export is deterministic and refuses conflicting destination content. Replacement draws require an explicit authorization record and configured authority, preserve the original, and link their audits. Operator-entered authority assertions are not identity authentication. The desktop is operated under PTA machine access and in-person review procedures.
 
-No defaults are invented for exception approval authority, grace-period duration, correction deadlines, authoritative room-parent identity verification, final publication authority, physical drawing procedure, retention, event dates, school identity, or Windows support target. Late declines remain a future PTA exception workflow.
+The directory interchange format uses canonical UTF-8 CSV and JSON. The snapshot hash is SHA-256 of config bytes, binding the CSV manifest without self-reference. Output hashes bind canonical run fields, excluding the output hash itself. Neither checksum establishes provenance.
 
-Milestone 2 must implement immutable official runs, intent-before-preview, atomic commit and crash recovery, audit records, tamper/replay protection, and exports before exposing an official draw. Subsequent milestones own GUI, Windows packaging and clean-machine verification, Google integrations, private notices, confirmations, exceptions, and publication. No real Google accounts are connected here.
+## Google administration
+
+Private intake, raw responses, contacts, reviews, and audit state stay separate from sanitized officer dashboards and published rosters. Administrator operations validate the active identity against configured administrators. Parent confirmations validate both a private one-use token and the verified contact identity. GET requests do not record responses.
+
+Actual successful email sends start the 48-hour response window. Timely explicit acceptance and deadline auto-acceptance remain distinct. Ambiguous sends require reconciliation instead of automatic duplicate delivery. Declines and withdrawals are exceptions, not rerolls. Changed assignments require affected-class consent and configured PTA approval. Publication requires complete validation, accepted confirmations, resolved exceptions, and designated approval.
+
+## PTA decisions required for live operation
+
+No production defaults are invented for grace duration, correction deadlines, exception approval authority, publication authority, authoritative contact verification, retention, event dates, school identity, or supported Windows versions. Live-sensitive operations block when their required policy is absent. The sample data supplies explicit fictional policy only for rehearsals.
+
+Automatic priority uses a cryptographic saved seed and a versioned replay algorithm. Manual priority requires a complete permutation and permits one person to enter and verify the physical draw. Two separate input approvals are still required. Packaging uses a one-folder executable and ZIP checksum. Code signing and distribution trust remain operator choices, not security warnings to bypass.
+
+## Validation limits
+
+Local tests use synthetic records, mocked Google services, and dry-run messaging. They do not establish Google production permissions, actual email delivery, quota capacity, or school policy approval. Hosted Windows packaged smoke tests demonstrate the tested runner environment. Separate operator acceptance on each supported Windows version remains necessary before live distribution.

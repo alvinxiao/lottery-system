@@ -1,0 +1,31 @@
+name: Windows standalone package
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.9.5'
+      - run: uv python install 3.12
+      - run: uv sync --frozen --python 3.12
+      - name: Test native desktop widgets
+        run: uv run --frozen python -c "from lottery.gui import smoke_test; smoke_test()"
+      - name: Build native Windows executable
+        run: uv run --frozen python scripts/build_desktop.py
+      - name: Block bundled executable network access
+        shell: pwsh
+        run: |
+          New-NetFirewallRule -DisplayName LotterySmokeOffline -Direction Outbound -Program "$pwd\dist\PTACarnivalLottery\PTACarnivalLottery.exe" -Action Block -Profile Any
+      - name: Run frozen offline draw and bundled Tk smoke
+        run: uv run --frozen python scripts/packaged_smoke.py dist/PTACarnivalLottery/PTACarnivalLottery.exe sample-data/ready-to-draw --gui
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PTA-Carnival-Lottery-Windows
+          path: |
+            dist/*.zip
+            dist/*.zip.sha256
+          if-no-files-found: error

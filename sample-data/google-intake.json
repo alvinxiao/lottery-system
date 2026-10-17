@@ -1,0 +1,1732 @@
+{
+  "demo_only": true,
+  "dry_run": true,
+  "event_id": "DEMO-carnival-2026-rehearsal-01",
+  "administrators": [
+    {
+      "admin_id": "DEMO-admin-alex",
+      "email": "alex@example.invalid"
+    },
+    {
+      "admin_id": "DEMO-admin-robin",
+      "email": "robin@example.invalid"
+    }
+  ],
+  "classes": [
+    {
+      "class_id": "C01",
+      "display_name": "Class 01 - Kindergarten",
+      "contact_name": "Fictional Parent C01",
+      "contact_email": "parent-c01@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C01-P1",
+          "booth_id": "G02",
+          "category": "game",
+          "name": "Beanbag toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C01-P2",
+          "booth_id": "G01",
+          "category": "game",
+          "name": "Ring toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C01-P3",
+          "booth_id": "F01",
+          "category": "food",
+          "name": "Jiaozi 饺子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C02",
+      "display_name": "Class 02 - Kindergarten",
+      "contact_name": "Fictional Parent C02",
+      "contact_email": "parent-c02@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C02-P1",
+          "booth_id": "G02",
+          "category": "game",
+          "name": "Beanbag toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C02-P2",
+          "booth_id": "G03",
+          "category": "game",
+          "name": "Balloon darts",
+          "description": "Synthetic PTA safety approval for rehearsal only; soft-tip darts and adult supervision."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C02-P3",
+          "booth_id": "F02",
+          "category": "food",
+          "name": "Baozi 包子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C03",
+      "display_name": "Class 03 - Kindergarten",
+      "contact_name": "Fictional Parent C03",
+      "contact_email": "parent-c03@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C03-P1",
+          "booth_id": "G03",
+          "category": "game",
+          "name": "Balloon darts",
+          "description": "Synthetic PTA safety approval for rehearsal only; soft-tip darts and adult supervision."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C03-P2",
+          "booth_id": "G04",
+          "category": "game",
+          "name": "Duck pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C03-P3",
+          "booth_id": "F03",
+          "category": "food",
+          "name": "Scallion pancakes 葱油饼",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C04",
+      "display_name": "Class 04 - Kindergarten",
+      "contact_name": "Fictional Parent C04",
+      "contact_email": "parent-c04@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C04-P1",
+          "booth_id": "G05",
+          "category": "game",
+          "name": "Mini basketball",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C04-P2",
+          "booth_id": "G04",
+          "category": "game",
+          "name": "Duck pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C04-P3",
+          "booth_id": "F04",
+          "category": "food",
+          "name": "Fried rice 炒饭",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C05",
+      "display_name": "Class 05 - Grade 1",
+      "contact_name": "Fictional Parent C05",
+      "contact_email": "parent-c05@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C05-P1",
+          "booth_id": "G05",
+          "category": "game",
+          "name": "Mini basketball",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C05-P2",
+          "booth_id": "G06",
+          "category": "game",
+          "name": "Bottle knockdown",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C05-P3",
+          "booth_id": "F05",
+          "category": "food",
+          "name": "Chow mein 炒面",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C06",
+      "display_name": "Class 06 - Grade 1",
+      "contact_name": "Fictional Parent C06",
+      "contact_email": "parent-c06@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C06-P1",
+          "booth_id": "G06",
+          "category": "game",
+          "name": "Bottle knockdown",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C06-P2",
+          "booth_id": "G07",
+          "category": "game",
+          "name": "Fishing pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C06-P3",
+          "booth_id": "F06",
+          "category": "food",
+          "name": "Wonton soup 馄饨汤",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C07",
+      "display_name": "Class 07 - Grade 1",
+      "contact_name": "Fictional Parent C07",
+      "contact_email": "parent-c07@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C07-P1",
+          "booth_id": "G08",
+          "category": "game",
+          "name": "Spin the wheel",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C07-P2",
+          "booth_id": "G07",
+          "category": "game",
+          "name": "Fishing pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C07-P3",
+          "booth_id": "F07",
+          "category": "food",
+          "name": "Tangyuan 汤圆",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C08",
+      "display_name": "Class 08 - Grade 1",
+      "contact_name": "Fictional Parent C08",
+      "contact_email": "parent-c08@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C08-P1",
+          "booth_id": "G08",
+          "category": "game",
+          "name": "Spin the wheel",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C08-P2",
+          "booth_id": "G09",
+          "category": "game",
+          "name": "Mini golf",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C08-P3",
+          "booth_id": "F08",
+          "category": "food",
+          "name": "Egg tarts 蛋挞",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C09",
+      "display_name": "Class 09 - Grade 2",
+      "contact_name": "Fictional Parent C09",
+      "contact_email": "parent-c09@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C09-P1",
+          "booth_id": "G09",
+          "category": "game",
+          "name": "Mini golf",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C09-P2",
+          "booth_id": "G01",
+          "category": "game",
+          "name": "Ring toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C09-P3",
+          "booth_id": "F09",
+          "category": "food",
+          "name": "Tea eggs 茶叶蛋",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C10",
+      "display_name": "Class 10 - Grade 2",
+      "contact_name": "Fictional Parent C10",
+      "contact_email": "parent-c10@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C10-P1",
+          "booth_id": "F02",
+          "category": "food",
+          "name": "Baozi 包子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C10-P2",
+          "booth_id": "F01",
+          "category": "food",
+          "name": "Jiaozi 饺子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C10-P3",
+          "booth_id": "G01",
+          "category": "game",
+          "name": "Ring toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C11",
+      "display_name": "Class 11 - Grade 2",
+      "contact_name": "Fictional Parent C11",
+      "contact_email": "parent-c11@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C11-P1",
+          "booth_id": "F02",
+          "category": "food",
+          "name": "Baozi 包子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C11-P2",
+          "booth_id": "F03",
+          "category": "food",
+          "name": "Scallion pancakes 葱油饼",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C11-P3",
+          "booth_id": "G02",
+          "category": "game",
+          "name": "Beanbag toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C12",
+      "display_name": "Class 12 - Grade 2",
+      "contact_name": "Fictional Parent C12",
+      "contact_email": "parent-c12@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C12-P1",
+          "booth_id": "F03",
+          "category": "food",
+          "name": "Scallion pancakes 葱油饼",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C12-P2",
+          "booth_id": "F04",
+          "category": "food",
+          "name": "Fried rice 炒饭",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C12-P3",
+          "booth_id": "G03",
+          "category": "game",
+          "name": "Balloon darts",
+          "description": "Synthetic PTA safety approval for rehearsal only; soft-tip darts and adult supervision."
+        }
+      ]
+    },
+    {
+      "class_id": "C13",
+      "display_name": "Class 13 - Grade 3",
+      "contact_name": "Fictional Parent C13",
+      "contact_email": "parent-c13@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C13-P1",
+          "booth_id": "F05",
+          "category": "food",
+          "name": "Chow mein 炒面",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C13-P2",
+          "booth_id": "F04",
+          "category": "food",
+          "name": "Fried rice 炒饭",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C13-P3",
+          "booth_id": "G04",
+          "category": "game",
+          "name": "Duck pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C14",
+      "display_name": "Class 14 - Grade 3",
+      "contact_name": "Fictional Parent C14",
+      "contact_email": "parent-c14@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C14-P1",
+          "booth_id": "F05",
+          "category": "food",
+          "name": "Chow mein 炒面",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C14-P2",
+          "booth_id": "F06",
+          "category": "food",
+          "name": "Wonton soup 馄饨汤",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C14-P3",
+          "booth_id": "G05",
+          "category": "game",
+          "name": "Mini basketball",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C15",
+      "display_name": "Class 15 - Grade 3",
+      "contact_name": "Fictional Parent C15",
+      "contact_email": "parent-c15@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C15-P1",
+          "booth_id": "F06",
+          "category": "food",
+          "name": "Wonton soup 馄饨汤",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C15-P2",
+          "booth_id": "F07",
+          "category": "food",
+          "name": "Tangyuan 汤圆",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C15-P3",
+          "booth_id": "G06",
+          "category": "game",
+          "name": "Bottle knockdown",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C16",
+      "display_name": "Class 16 - Grade 3",
+      "contact_name": "Fictional Parent C16",
+      "contact_email": "parent-c16@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C16-P1",
+          "booth_id": "F08",
+          "category": "food",
+          "name": "Egg tarts 蛋挞",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C16-P2",
+          "booth_id": "F07",
+          "category": "food",
+          "name": "Tangyuan 汤圆",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C16-P3",
+          "booth_id": "G07",
+          "category": "game",
+          "name": "Fishing pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C17",
+      "display_name": "Class 17 - Grade 4",
+      "contact_name": "Fictional Parent C17",
+      "contact_email": "parent-c17@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C17-P1",
+          "booth_id": "F08",
+          "category": "food",
+          "name": "Egg tarts 蛋挞",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C17-P2",
+          "booth_id": "F09",
+          "category": "food",
+          "name": "Tea eggs 茶叶蛋",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C17-P3",
+          "booth_id": "G08",
+          "category": "game",
+          "name": "Spin the wheel",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C18",
+      "display_name": "Class 18 - Grade 4",
+      "contact_name": "Fictional Parent C18",
+      "contact_email": "parent-c18@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C18-P1",
+          "booth_id": "F09",
+          "category": "food",
+          "name": "Tea eggs 茶叶蛋",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C18-P2",
+          "booth_id": "F10",
+          "category": "food",
+          "name": "Spring rolls 春卷",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C18-P3",
+          "booth_id": "G09",
+          "category": "game",
+          "name": "Mini golf",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C19",
+      "display_name": "Class 19 - Grade 4",
+      "contact_name": "Fictional Parent C19",
+      "contact_email": "parent-c19@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C19-P1",
+          "booth_id": "F11",
+          "category": "food",
+          "name": "Sesame balls 芝麻球",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C19-P2",
+          "booth_id": "F10",
+          "category": "food",
+          "name": "Spring rolls 春卷",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C19-P3",
+          "booth_id": "G01",
+          "category": "game",
+          "name": "Ring toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C20",
+      "display_name": "Class 20 - Grade 4",
+      "contact_name": "Fictional Parent C20",
+      "contact_email": "parent-c20@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C20-P1",
+          "booth_id": "F11",
+          "category": "food",
+          "name": "Sesame balls 芝麻球",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C20-P2",
+          "booth_id": "F12",
+          "category": "food",
+          "name": "Tofu pudding 豆花",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C20-P3",
+          "booth_id": "G02",
+          "category": "game",
+          "name": "Beanbag toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    },
+    {
+      "class_id": "C21",
+      "display_name": "Class 21 - Grade 5",
+      "contact_name": "Fictional Parent C21",
+      "contact_email": "parent-c21@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C21-P1",
+          "booth_id": "F12",
+          "category": "food",
+          "name": "Tofu pudding 豆花",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C21-P2",
+          "booth_id": "F13",
+          "category": "food",
+          "name": "Zhajiang noodles 炸酱面",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C21-P3",
+          "booth_id": "G03",
+          "category": "game",
+          "name": "Balloon darts",
+          "description": "Synthetic PTA safety approval for rehearsal only; soft-tip darts and adult supervision."
+        }
+      ]
+    },
+    {
+      "class_id": "C22",
+      "display_name": "Class 22 - Grade 5",
+      "contact_name": "Fictional Parent C22",
+      "contact_email": "parent-c22@example.invalid",
+      "proposals": [
+        {
+          "rank": 1,
+          "proposal_id": "C22-P1",
+          "booth_id": "F01",
+          "category": "food",
+          "name": "Jiaozi 饺子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 2,
+          "proposal_id": "C22-P2",
+          "booth_id": "F13",
+          "category": "food",
+          "name": "Zhajiang noodles 炸酱面",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        },
+        {
+          "rank": 3,
+          "proposal_id": "C22-P3",
+          "booth_id": "G04",
+          "category": "game",
+          "name": "Duck pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required."
+        }
+      ]
+    }
+  ],
+  "config": {
+    "event_id": "DEMO-carnival-2026-rehearsal-01",
+    "game_target": 9,
+    "food_target": 13,
+    "admins": [
+      "alex@example.invalid",
+      "robin@example.invalid"
+    ],
+    "initial_deadline": "2026-11-01T18:00:00Z",
+    "grace_hours": 48,
+    "exception_approvers": [
+      "alex@example.invalid"
+    ],
+    "publication_approvers": [
+      "alex@example.invalid"
+    ]
+  },
+  "submissions": [
+    {
+      "class_id": "C01",
+      "email": "parent-c01@example.invalid",
+      "name": "Fictional Parent C01",
+      "proposals": [
+        {
+          "name": "Beanbag toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Ring toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Jiaozi 饺子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "class_id": "C02",
+      "email": "parent-c02@example.invalid",
+      "name": "Fictional Parent C02",
+      "proposals": [
+        {
+          "name": "Beanbag toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Balloon darts",
+          "description": "Synthetic PTA safety approval for rehearsal only; soft-tip darts and adult supervision.",
+          "category": "game"
+        },
+        {
+          "name": "Baozi 包子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "class_id": "C03",
+      "email": "parent-c03@example.invalid",
+      "name": "Fictional Parent C03",
+      "proposals": [
+        {
+          "name": "Balloon darts",
+          "description": "Synthetic PTA safety approval for rehearsal only; soft-tip darts and adult supervision.",
+          "category": "game"
+        },
+        {
+          "name": "Duck pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Scallion pancakes 葱油饼",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "class_id": "C04",
+      "email": "parent-c04@example.invalid",
+      "name": "Fictional Parent C04",
+      "proposals": [
+        {
+          "name": "Mini basketball",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Duck pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Fried rice 炒饭",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "class_id": "C05",
+      "email": "parent-c05@example.invalid",
+      "name": "Fictional Parent C05",
+      "proposals": [
+        {
+          "name": "Mini basketball",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Bottle knockdown",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Chow mein 炒面",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "class_id": "C06",
+      "email": "parent-c06@example.invalid",
+      "name": "Fictional Parent C06",
+      "proposals": [
+        {
+          "name": "Bottle knockdown",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Fishing pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Wonton soup 馄饨汤",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "class_id": "C07",
+      "email": "parent-c07@example.invalid",
+      "name": "Fictional Parent C07",
+      "proposals": [
+        {
+          "name": "Spin the wheel",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Fishing pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Tangyuan 汤圆",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "class_id": "C08",
+      "email": "parent-c08@example.invalid",
+      "name": "Fictional Parent C08",
+      "proposals": [
+        {
+          "name": "Spin the wheel",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Mini golf",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Egg tarts 蛋挞",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "class_id": "C09",
+      "email": "parent-c09@example.invalid",
+      "name": "Fictional Parent C09",
+      "proposals": [
+        {
+          "name": "Mini golf",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Ring toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        },
+        {
+          "name": "Tea eggs 茶叶蛋",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        }
+      ]
+    },
+    {
+      "class_id": "C10",
+      "email": "parent-c10@example.invalid",
+      "name": "Fictional Parent C10",
+      "proposals": [
+        {
+          "name": "Baozi 包子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Jiaozi 饺子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Ring toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C11",
+      "email": "parent-c11@example.invalid",
+      "name": "Fictional Parent C11",
+      "proposals": [
+        {
+          "name": "Baozi 包子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Scallion pancakes 葱油饼",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Beanbag toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C12",
+      "email": "parent-c12@example.invalid",
+      "name": "Fictional Parent C12",
+      "proposals": [
+        {
+          "name": "Scallion pancakes 葱油饼",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Fried rice 炒饭",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Balloon darts",
+          "description": "Synthetic PTA safety approval for rehearsal only; soft-tip darts and adult supervision.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C13",
+      "email": "parent-c13@example.invalid",
+      "name": "Fictional Parent C13",
+      "proposals": [
+        {
+          "name": "Chow mein 炒面",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Fried rice 炒饭",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Duck pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C14",
+      "email": "parent-c14@example.invalid",
+      "name": "Fictional Parent C14",
+      "proposals": [
+        {
+          "name": "Chow mein 炒面",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Wonton soup 馄饨汤",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Mini basketball",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C15",
+      "email": "parent-c15@example.invalid",
+      "name": "Fictional Parent C15",
+      "proposals": [
+        {
+          "name": "Wonton soup 馄饨汤",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Tangyuan 汤圆",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Bottle knockdown",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C16",
+      "email": "parent-c16@example.invalid",
+      "name": "Fictional Parent C16",
+      "proposals": [
+        {
+          "name": "Egg tarts 蛋挞",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Tangyuan 汤圆",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Fishing pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C17",
+      "email": "parent-c17@example.invalid",
+      "name": "Fictional Parent C17",
+      "proposals": [
+        {
+          "name": "Egg tarts 蛋挞",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Tea eggs 茶叶蛋",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Spin the wheel",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C18",
+      "email": "parent-c18@example.invalid",
+      "name": "Fictional Parent C18",
+      "proposals": [
+        {
+          "name": "Tea eggs 茶叶蛋",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Spring rolls 春卷",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Mini golf",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C19",
+      "email": "parent-c19@example.invalid",
+      "name": "Fictional Parent C19",
+      "proposals": [
+        {
+          "name": "Sesame balls 芝麻球",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Spring rolls 春卷",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Ring toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C20",
+      "email": "parent-c20@example.invalid",
+      "name": "Fictional Parent C20",
+      "proposals": [
+        {
+          "name": "Sesame balls 芝麻球",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Tofu pudding 豆花",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Beanbag toss",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C21",
+      "email": "parent-c21@example.invalid",
+      "name": "Fictional Parent C21",
+      "proposals": [
+        {
+          "name": "Tofu pudding 豆花",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Zhajiang noodles 炸酱面",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Balloon darts",
+          "description": "Synthetic PTA safety approval for rehearsal only; soft-tip darts and adult supervision.",
+          "category": "game"
+        }
+      ]
+    },
+    {
+      "class_id": "C22",
+      "email": "parent-c22@example.invalid",
+      "name": "Fictional Parent C22",
+      "proposals": [
+        {
+          "name": "Jiaozi 饺子",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Zhajiang noodles 炸酱面",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "food"
+        },
+        {
+          "name": "Duck pond",
+          "description": "Fictional rehearsal proposal; live safety, allergen and preparation review still required.",
+          "category": "game"
+        }
+      ]
+    }
+  ],
+  "review_decisions": {
+    "C01": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G02",
+        "name": "Beanbag toss",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G01",
+        "name": "Ring toss",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F01",
+        "name": "Jiaozi 饺子",
+        "category": "food"
+      }
+    ],
+    "C02": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G02",
+        "name": "Beanbag toss",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G03",
+        "name": "Balloon darts",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F02",
+        "name": "Baozi 包子",
+        "category": "food"
+      }
+    ],
+    "C03": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G03",
+        "name": "Balloon darts",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G04",
+        "name": "Duck pond",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F03",
+        "name": "Scallion pancakes 葱油饼",
+        "category": "food"
+      }
+    ],
+    "C04": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G05",
+        "name": "Mini basketball",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G04",
+        "name": "Duck pond",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F04",
+        "name": "Fried rice 炒饭",
+        "category": "food"
+      }
+    ],
+    "C05": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G05",
+        "name": "Mini basketball",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G06",
+        "name": "Bottle knockdown",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F05",
+        "name": "Chow mein 炒面",
+        "category": "food"
+      }
+    ],
+    "C06": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G06",
+        "name": "Bottle knockdown",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G07",
+        "name": "Fishing pond",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F06",
+        "name": "Wonton soup 馄饨汤",
+        "category": "food"
+      }
+    ],
+    "C07": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G08",
+        "name": "Spin the wheel",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G07",
+        "name": "Fishing pond",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F07",
+        "name": "Tangyuan 汤圆",
+        "category": "food"
+      }
+    ],
+    "C08": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G08",
+        "name": "Spin the wheel",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G09",
+        "name": "Mini golf",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F08",
+        "name": "Egg tarts 蛋挞",
+        "category": "food"
+      }
+    ],
+    "C09": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G09",
+        "name": "Mini golf",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G01",
+        "name": "Ring toss",
+        "category": "game"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F09",
+        "name": "Tea eggs 茶叶蛋",
+        "category": "food"
+      }
+    ],
+    "C10": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F02",
+        "name": "Baozi 包子",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F01",
+        "name": "Jiaozi 饺子",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G01",
+        "name": "Ring toss",
+        "category": "game"
+      }
+    ],
+    "C11": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F02",
+        "name": "Baozi 包子",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F03",
+        "name": "Scallion pancakes 葱油饼",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G02",
+        "name": "Beanbag toss",
+        "category": "game"
+      }
+    ],
+    "C12": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F03",
+        "name": "Scallion pancakes 葱油饼",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F04",
+        "name": "Fried rice 炒饭",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G03",
+        "name": "Balloon darts",
+        "category": "game"
+      }
+    ],
+    "C13": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F05",
+        "name": "Chow mein 炒面",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F04",
+        "name": "Fried rice 炒饭",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G04",
+        "name": "Duck pond",
+        "category": "game"
+      }
+    ],
+    "C14": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F05",
+        "name": "Chow mein 炒面",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F06",
+        "name": "Wonton soup 馄饨汤",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G05",
+        "name": "Mini basketball",
+        "category": "game"
+      }
+    ],
+    "C15": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F06",
+        "name": "Wonton soup 馄饨汤",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F07",
+        "name": "Tangyuan 汤圆",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G06",
+        "name": "Bottle knockdown",
+        "category": "game"
+      }
+    ],
+    "C16": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F08",
+        "name": "Egg tarts 蛋挞",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F07",
+        "name": "Tangyuan 汤圆",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G07",
+        "name": "Fishing pond",
+        "category": "game"
+      }
+    ],
+    "C17": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F08",
+        "name": "Egg tarts 蛋挞",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F09",
+        "name": "Tea eggs 茶叶蛋",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G08",
+        "name": "Spin the wheel",
+        "category": "game"
+      }
+    ],
+    "C18": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F09",
+        "name": "Tea eggs 茶叶蛋",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F10",
+        "name": "Spring rolls 春卷",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G09",
+        "name": "Mini golf",
+        "category": "game"
+      }
+    ],
+    "C19": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F11",
+        "name": "Sesame balls 芝麻球",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F10",
+        "name": "Spring rolls 春卷",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G01",
+        "name": "Ring toss",
+        "category": "game"
+      }
+    ],
+    "C20": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F11",
+        "name": "Sesame balls 芝麻球",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F12",
+        "name": "Tofu pudding 豆花",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G02",
+        "name": "Beanbag toss",
+        "category": "game"
+      }
+    ],
+    "C21": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F12",
+        "name": "Tofu pudding 豆花",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F13",
+        "name": "Zhajiang noodles 炸酱面",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G03",
+        "name": "Balloon darts",
+        "category": "game"
+      }
+    ],
+    "C22": [
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F01",
+        "name": "Jiaozi 饺子",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "F13",
+        "name": "Zhajiang noodles 炸酱面",
+        "category": "food"
+      },
+      {
+        "status": "APPROVED",
+        "reason": "Synthetic rehearsal approval only",
+        "booth_id": "G04",
+        "name": "Duck pond",
+        "category": "game"
+      }
+    ]
+  }
+}

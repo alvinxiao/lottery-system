@@ -4,3 +4,5 @@ __pycache__/
 .hypothesis/
 *.egg-info/
 dist/
+rehearsal-output/
+rehearsal-runs.sqlite3

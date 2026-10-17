@@ -1,41 +1,55 @@
-# PTA booth lottery
+# PTA carnival booth lottery
 
-This repository implements the specification's Milestones 0 and 1. Administrators can validate frozen snapshot files and run a nonofficial feasibility check. The Python API can optimize synthetic or approved snapshots for development. It cannot perform an official draw.
+An offline desktop lottery and a Google Forms, Sheets, and Apps Script administration workflow implement [the specification](docs/spec.md). The desktop validates approved proposals, checks exact category feasibility, commits one auditable official draw, recovers interrupted runs, and exports verified results. Google administration handles intake, reviews, corrections, private notifications, confirmations, exceptions, and sanitized publication.
 
-## Development
+## Try the desktop with sample data
 
-Install Python 3.12 or newer and [uv](https://docs.astral.sh/uv/). From this checkout, run:
+Install Python 3.12 or newer and [uv](https://docs.astral.sh/uv/). From the checkout, run:
 
 ```sh
 uv sync --frozen
-uv run --frozen python scripts/check.py
-uv run --frozen lottery --help
-uv run --frozen lottery validate tests/fixtures/valid-small
-uv run --frozen lottery feasibility tests/fixtures/valid-small
+uv run --frozen lottery-gui --database rehearsal-runs.sqlite3
 ```
 
-On restricted cloud machines, set `UV_CACHE_DIR` to a writable directory such as `/tmp/lottery-uv-cache`. Use the existing isolated checkout. Do not create a worktree for ordinary cloud tasks.
+Import `sample-data/ready-to-draw`. It contains 22 fictional classes, nine carnival games, and thirteen Chinese food booths. Follow [the manual rehearsal](sample-data/README.md) to check feasibility, record the two mock approvals, commit, export, and reopen the same result. `sample-data/infeasible` demonstrates a quota conflict. [The generator](scripts/generate_sample_data.py) reproduces both datasets and supports new rehearsal event IDs.
 
-The check script runs the real pytest suite, including an exhaustive independent allocation oracle over generated small inputs, input validation, objective verification, subprocess CLI checks, and a 22-class allocation. CI runs the same command on Linux and Windows. Windows CI does not validate standalone packaging.
+Windows operators can use the standalone executable without Python or Internet access. See [Windows distribution](docs/windows-packaging.md) for CI artifacts, building, and clean-machine acceptance. Keep the executable beside its bundled `_internal` directory after extracting the ZIP.
 
-## Snapshot version 1
+[The desktop guide](docs/desktop-guide.md) explains configuration, signoffs, permanent draws, recovery, and exports. The application stores durable run history in a local SQLite database. Preserve that database and the exported audit folders. Reopening, double-clicking, or exporting never creates another draw for the event.
 
-Use a directory containing `classes.csv`, `approved_proposals.csv`, and `config.json`. Headers follow [the specification](docs/spec.md). Categories are the lowercase strings `game` and `food`. Exactly three approved distinct choices per class are required. This format does not contain contact information or proposal approval flags. Exporters must supply only PTA-approved choices.
+## Prepare the Google workflow
 
-CSV is UTF-8 without BOM, with LF line endings, a final newline, exact header order, and Python CSV minimal quoting. Row order is preserved and may vary without affecting the optimum. JSON is UTF-8, sorted keys, compact separators, unescaped Unicode, and a final LF. See `lottery.snapshot.canonical_json`. The manifest maps each supported CSV filename to its lowercase SHA-256 hex digest. Optional `booths.csv` uses `booth_id,canonical_name,category` and must cover exactly the referenced booth IDs.
+Use [the Google setup guide](google/README.md) to configure designated administrators, authoritative contacts, event deadlines, and PTA policy, then deploy the Apps Script sources. Dry-run email is the default. Google account authorization, Drive sharing, and live delivery are operator actions. No real accounts or recipients are used by the local tests.
 
-Configuration has exactly `schema_version`, `event_id`, `class_count`, `game_target`, `food_target`, `snapshot_created_at`, `approval_ids`, and `hash_manifest`. Schema version is 1. Timestamps must include a timezone. Approval IDs require two distinct entries. These are recorded assertions, not authenticated administrator identities. The snapshot hash is SHA-256 of the canonical config bytes, which bind all CSV hashes without self-reference. Hashes establish consistency, not authenticity.
+The Google workflow exports canonical approved snapshots for the offline desktop and imports its verified committed bundles. Parent contacts and original preferences stay in the private workbook and state file. Public sheets and PDFs contain only the finalized class, booth, and category.
 
-The CLI returns 0 for validation or feasible inputs, 1 for proved infeasibility, and 2 for invalid inputs or an incomplete solve. Feasibility never creates priority, displays assignments, or commits a run. Infeasible diagnostics conservatively include every class as eligible for private correction outreach. They do not identify blame or a minimal repair set.
+## Run the checks
 
-## Python API
+```sh
+uv run --frozen python scripts/check.py
+uv run --frozen python scripts/rehearse.py --output rehearsal-output
+cd google
+npm test
+npm run build
+```
 
-`load_snapshot(path)` parses and validates directory inputs. Frozen dataclasses in `lottery.domain` represent the internal contract. `feasibility(snapshot)` checks full allocation without random priority. `optimize(snapshot, priority)` returns assignments and the exact objective vector only after every stage proves optimal. `verify_assignments` checks constraints independently. `verify_solution` additionally recomputes the reported objective vector, without claiming to prove global optimality.
+The Python suite compares the optimizer against exhaustive enumeration, checks the 22-class quotas, exercises crash recovery and concurrent retries, verifies exports and authorized replacements, and drives the desktop controller. Display-backed Tk tests run on Windows and on Linux with a display server. Google tests exercise the business rules and service adapters with synthetic identities and delivery receipts.
 
-The optimizer locks unique-first count, first-choice count, second-choice count, then each class's negated assigned rank in the supplied priority order. Unique-first considers competing proposals at all ranks. Ranks are distinct, so minimizing each class's rank uniquely determines its booth. Class and proposal input order do not alter the result. A time limit applies separately to each stage. UNKNOWN and merely FEASIBLE optimization outcomes raise `SolveIncomplete` without returning an allocation.
+The rehearsal script takes fictional Google intake through review, snapshot export, an actual committed desktop draw, verified Google import, explicit and automatic acceptance, a consented exception, and approved sanitized roster output. It writes reviewable files under the selected directory and makes no Google or email calls. Repeating it reuses the same committed draw.
 
-`automatic_priority(class_ids, seed)` is a pure replay utility. Its `sha256-counter-fisher-yates-v1` algorithm sorts class IDs, decodes a 32-byte lowercase hexadecimal seed, and applies reverse Fisher-Yates. Each candidate is SHA-256 of seed bytes followed by a 16-byte unsigned big-endian counter starting at zero. Rejection sampling discards integers outside the largest multiple of the current range below 2^256. `new_seed()` uses `secrets.token_hex(32)`. No CLI generates randomness. `manual_priority` requires an exact permutation. These utilities do not authenticate or witness a physical drawing.
+The command-line input checks remain nonofficial:
 
-## Scope and review
+```sh
+uv run --frozen lottery validate sample-data/ready-to-draw
+uv run --frozen lottery feasibility sample-data/ready-to-draw
+```
 
-[DECISIONS.md](DECISIONS.md) records locked and unresolved policy. [The architecture decision](docs/adr/0001-solver-core.md) explains module ownership and alternatives. Audit persistence, committed official draws, GUI, packaging, Google integration, notification identity, and publication gates belong to later milestones. Do not use this development core for a live draw before those controls exist.
+Use the existing isolated checkout for cloud tasks. If the default cache is not writable, set `UV_CACHE_DIR` to `/tmp/lottery-uv-cache`. Do not create a worktree for ordinary cloud tasks.
+
+## Data and trust boundaries
+
+Snapshots use versioned canonical UTF-8 CSV, a SHA-256 manifest, and compact sorted JSON with a final LF. The input hash binds the config bytes and all CSV hashes. The result audit records frozen input, approvals, randomization, versions, objectives, timestamps, and its output hash. Export bundles include the original snapshot and can be independently checked with `lottery.exports.verify_export`.
+
+Hashes detect corruption and disagreement. They do not authenticate the operator or prevent a machine administrator from replacing the entire database. Desktop approval IDs are recorded assertions. Google administrative operations and parent confirmations enforce identity at their service boundaries.
+
+[Policy decisions](DECISIONS.md) distinguish implemented rules from event-specific authority that PTA must configure. Exception and publication authority, identity verification, retention, deadlines, and Windows support approval are not invented by the application. Live rollout requires those decisions and an operator rehearsal. [Architecture decisions](docs/adr) record persistence and solver design.

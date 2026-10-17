@@ -1,0 +1,23 @@
+booth_id,canonical_name,category
+F01,Jiaozi 饺子,food
+F02,Baozi 包子,food
+F03,Scallion pancakes 葱油饼,food
+F04,Fried rice 炒饭,food
+F05,Chow mein 炒面,food
+F06,Wonton soup 馄饨汤,food
+F07,Tangyuan 汤圆,food
+F08,Egg tarts 蛋挞,food
+F09,Tea eggs 茶叶蛋,food
+F10,Spring rolls 春卷,food
+F11,Sesame balls 芝麻球,food
+F12,Tofu pudding 豆花,food
+F13,Zhajiang noodles 炸酱面,food
+G01,Ring toss,game
+G02,Beanbag toss,game
+G03,Balloon darts,game
+G04,Duck pond,game
+G05,Mini basketball,game
+G06,Bottle knockdown,game
+G07,Fishing pond,game
+G08,Spin the wheel,game
+G09,Mini golf,game

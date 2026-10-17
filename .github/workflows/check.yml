@@ -15,4 +15,10 @@ jobs:
           version: '0.9.5'
       - run: uv python install 3.12
       - run: uv sync --frozen --python 3.12
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - run: uv run --frozen python scripts/check.py
+      - name: Test Google workflow with mock services
+        working-directory: google
+        run: npm test
