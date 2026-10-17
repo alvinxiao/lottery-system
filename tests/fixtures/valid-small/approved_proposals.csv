@@ -1,0 +1,7 @@
+class_id,rank,proposal_id,booth_id,category
+c0,1,p0_1,game-a,game
+c0,2,p0_2,food-a,food
+c0,3,p0_3,food-b,food
+c1,1,p1_1,food-c,food
+c1,2,p1_2,game-b,game
+c1,3,p1_3,food-d,food
