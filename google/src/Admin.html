@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <base target="_top" />
+    <style>
+      body {
+        font: 14px system-ui;
+        padding: 12px;
+      }
+      label {
+        display: block;
+        margin-top: 12px;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 8px;
+      }
+      textarea {
+        height: 130px;
+      }
+      button {
+        margin-top: 12px;
+      }
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+      fieldset {
+        margin-top: 16px;
+      }
+      small {
+        color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Private PTA administration</h2>
+    <p>
+      Every server action verifies your signed-in designated administrator
+      identity. Keep this workbook private.
+    </p>
+    <label
+      >Operation<select id="op">
+        <option value="verifyContact">Verify roster contact</option>
+        <option value="review">Review submission proposals</option>
+        <option value="correction">Request correction</option>
+        <option value="clearSignoffs">Reset pending approvals</option>
+        <option value="checkFeasibility">
+          Check draft feasibility (nonofficial)
+        </option>
+        <option value="signoff">Approve frozen input</option>
+        <option value="exportSnapshot">Export frozen input</option>
+        <option value="importResults">Import committed output folder</option>
+        <option value="sendAssignment">Send class assignment</option>
+        <option value="reconcile">Reconcile uncertain send</option>
+        <option value="requestConsent">Request affected class consent</option>
+        <option value="inviteRevisions">
+          Invite all classes to voluntary revision
+        </option>
+        <option value="openException">Open exception</option>
+        <option value="resolveException">Approve exception resolution</option>
+        <option value="publish">Approve final Sheet and PDF</option>
+        <option value="dashboard">Create sanitized officer dashboard</option>
+        <option value="resetDryRuns">Reset rehearsal sends</option>
+        <option value="setLive">Set live mode</option>
+        <option value="initialize">Initialize new event</option>
+      </select></label
+    >
+    <fieldset>
+      <legend>Roster verification / correction / notice</legend>
+      <label>Class ID<input id="classId" /></label
+      ><label>Verified email<input id="email" type="email" /></label
+      ><label>Evidence or correction reason<input id="reason" /></label
+      ><label
+        >Correction deadline (ISO with timezone)<input
+          id="deadline"
+          placeholder="2026-11-01T12:00:00Z"
+      /></label>
+    </fieldset>
+    <fieldset>
+      <legend>Proposal review</legend>
+      <label>Submission ID<input id="submission" /></label>
+      <p>
+        Review all three ranks. Use the same booth ID only after PTA decides
+        activities are equivalent.
+      </p>
+      <div id="ranks"></div>
+    </fieldset>
+    <label
+      >Other operation arguments (JSON array)<textarea id="args">
+[]</textarea
+      ></label
+    ><small
+      >Import: ["Drive folder ID"]. Send: ["Class ID", "assignment"]. Exception
+      resolve: ["exception ID", {"reason":"...","roster":[...]}].
+      Initialization: [config object, classes array]. Reconciliation: ["ledger
+      key", {"sent":true,"message_id":"...","sent_at":"ISO","evidence":"Gmail
+      Sent checked"}]. Live: [true].</small
+    >
+    <button onclick="run()">Run selected operation</button>
+    <pre id="status" role="status"></pre>
+    <script>
+      for (let i = 1; i <= 3; i++) {
+        const node = document.createElement("div");
+        node.innerHTML =
+          "<h4>Rank " +
+          i +
+          '</h4><label>Decision<select id="status' +
+          i +
+          '"><option>APPROVED</option><option>REJECTED</option></select></label><label>Canonical booth ID<input id="booth' +
+          i +
+          '"></label><label>Canonical name<input id="name' +
+          i +
+          '"></label><label>Category<select id="cat' +
+          i +
+          '"><option>game</option><option>food</option></select></label><label>Review reason<input id="reason' +
+          i +
+          '"></label>';
+        document.getElementById("ranks").appendChild(node);
+      }
+      const val = (id) => document.getElementById(id).value;
+      function run() {
+        try {
+          const op = val("op");
+          let args = JSON.parse(val("args"));
+          if (op === "verifyContact")
+            args = [val("classId"), val("email"), val("reason")];
+          if (op === "correction")
+            args = [val("classId"), val("reason"), val("deadline")];
+          if (op === "review")
+            args = [
+              val("submission"),
+              [1, 2, 3].map((i) => ({
+                status: val("status" + i),
+                booth_id: val("booth" + i),
+                name: val("name" + i),
+                category: val("cat" + i),
+                reason: val("reason" + i),
+              })),
+            ];
+          document.getElementById("status").textContent = "Working…";
+          google.script.run
+            .withSuccessHandler(
+              (r) =>
+                (document.getElementById("status").textContent = JSON.stringify(
+                  r,
+                  null,
+                  2,
+                )),
+            )
+            .withFailureHandler(
+              (e) =>
+                (document.getElementById("status").textContent = e.message),
+            )
+            .adminUiAction(op, args);
+        } catch (e) {
+          document.getElementById("status").textContent = e.message;
+        }
+      }
+    </script>
+  </body>
+</html>
