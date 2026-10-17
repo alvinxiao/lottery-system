@@ -4,16 +4,17 @@ build-backend = "hatchling.build"
 
 [project]
 name = "lottery-system"
-version = "0.1.0"
-description = "Nonofficial feasibility and allocation core for the PTA booth lottery"
+version = "0.2.0"
+description = "Offline auditable PTA carnival lottery desktop application"
 requires-python = ">=3.12"
 dependencies = ["ortools>=9.12,<10"]
 
 [project.scripts]
 lottery = "lottery.cli:main"
+lottery-gui = "lottery.gui:main"
 
 [dependency-groups]
-dev = ["pytest>=8,<10", "hypothesis>=6,<7"]
+dev = ["pytest>=8,<10", "hypothesis>=6,<7", "pyinstaller==6.16.0"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
